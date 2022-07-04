@@ -1,11 +1,12 @@
 ﻿using RoadblockWithMongoDb.Contracts.Data.Repositories;
+using RoadblockWithMongoDb.Contracts.Entities;
 
 namespace RoadblockWithMongoDb.Contracts.Services
 {
     public interface IDataService
     {
-        public ICarRepository Cars { get; }
+        public IRepository<Car> Cars { get; }
         
-        public IPersonRepository Persons { get; }
+        public IRepository<Person> Persons { get; }
     }
 }
