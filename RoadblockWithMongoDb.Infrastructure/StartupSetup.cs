@@ -16,7 +16,7 @@ namespace RoadblockWithMongoDb.Infrastructure
 
         public static void AddDataService(this IServiceCollection services)
         {
-            services.AddScoped<IDataService, DataService>(); ;
+            services.AddScoped<IDataService, DataService>(); 
         }
 
         public static void AddMongoContext(this IServiceCollection services)

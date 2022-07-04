@@ -9,10 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\RoadblockWithMongoDb.Contracts\RoadblockWithMongoDb.Contracts.csproj" />
     <ProjectReference Include="..\RoadblockWithMongoDb.Infrastructure\RoadblockWithMongoDb.Infrastructure.csproj" />
   </ItemGroup>

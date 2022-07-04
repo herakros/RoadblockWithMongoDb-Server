@@ -1,12 +1,12 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson.Serialization.IdGenerators;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace RoadblockWithMongoDb.Contracts.Data
 {
     public abstract class BaseEntity
     {
-        [BsonElement("_id")]
-        [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         public virtual string Id { get; private set; }
 
         public void SetId(string id) =>
