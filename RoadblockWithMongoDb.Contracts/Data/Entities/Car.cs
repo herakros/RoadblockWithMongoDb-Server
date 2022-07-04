@@ -1,20 +1,15 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+﻿using RoadblockWithMongoDb.Contracts.Data;
 using System;
 using System.Collections.Generic;
 
 namespace RoadblockWithMongoDb.Contracts.Entities
 {
-    public class Car
+    public class Car : BaseEntity
     {
         public Car()
         {
             this.AddedOn = DateTime.UtcNow;
         }
-
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
 
         public string VehicleNumber { get; set; }
 

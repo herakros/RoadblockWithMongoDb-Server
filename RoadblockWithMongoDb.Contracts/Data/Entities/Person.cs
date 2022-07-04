@@ -1,14 +1,9 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+﻿using RoadblockWithMongoDb.Contracts.Data;
 
 namespace RoadblockWithMongoDb.Contracts.Entities
 {
-    public class Person
+    public class Person : BaseEntity
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-
         public string Name { get; set; }
 
         public string Surname { get; set; }
