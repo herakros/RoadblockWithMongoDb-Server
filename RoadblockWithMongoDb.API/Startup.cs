@@ -6,7 +6,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using RoadblockWithMongoDb.Contracts.Config;
 using RoadblockWithMongoDb.Infrastructure;
-using RoadblockWithMongoDb.Infrastructure.Data;
 
 namespace RoadblockWithMongoDb.API
 {
@@ -23,7 +22,7 @@ namespace RoadblockWithMongoDb.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<DatabaseSettings>(Configuration.GetSection("MongoConnection"));
-            services.AddSingleton<MongoContext>();
+            services.AddMongoContext();
 
             services.AddRepositories();
             services.AddDataService();
