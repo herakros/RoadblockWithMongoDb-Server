@@ -23,8 +23,6 @@ namespace RoadblockWithMongoDb.API
         {
             services.Configure<DatabaseSettings>(Configuration.GetSection("MongoConnection"));
             services.AddMongoContext();
-
-            services.AddRepositories();
             services.AddDataService();
 
             services.AddControllers();
