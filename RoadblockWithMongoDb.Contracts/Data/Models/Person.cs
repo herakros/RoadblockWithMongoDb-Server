@@ -1,8 +1,8 @@
 ﻿using RoadblockWithMongoDb.Contracts.Data;
 
-namespace RoadblockWithMongoDb.Contracts.Entities
+namespace RoadblockWithMongoDb.Contracts.Data.Models
 {
-    public class Person : BaseEntity
+    public class Person
     {
         public string Name { get; set; }
 
