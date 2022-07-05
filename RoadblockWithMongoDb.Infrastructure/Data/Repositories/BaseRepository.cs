@@ -12,9 +12,9 @@ namespace RoadblockWithMongoDb.Infrastructure.Data.Repositories
     {
         private readonly IMongoCollection<TEntity> _entity;
 
-        public BaseRepository(IMongoDatabase database)
+        public BaseRepository(IMongoDatabase database, string collectionName)
         {
-            _entity = database.GetCollection<TEntity>($"{nameof(TEntity)}s");
+            _entity = database.GetCollection<TEntity>(collectionName);
         }
 
         public async Task AddAsync(TEntity obj)
@@ -41,12 +41,10 @@ namespace RoadblockWithMongoDb.Infrastructure.Data.Repositories
         public async Task UpdateAsync(TEntity obj)
         {
             Expression<Func<TEntity, string>> func = f => f.Id;
-
             var value = (string)obj.GetType().GetProperty(func.Body.ToString().Split(".")[1]).GetValue(obj, null);
             var filter = Builders<TEntity>.Filter.Eq(func, value);
 
-            if (obj != null)
-                await _entity.ReplaceOneAsync(filter, obj);
+            await _entity.ReplaceOneAsync(filter, obj);
         }
     }
 }

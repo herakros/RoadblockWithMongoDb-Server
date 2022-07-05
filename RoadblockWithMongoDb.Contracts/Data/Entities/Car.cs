@@ -1,8 +1,9 @@
 ﻿using RoadblockWithMongoDb.Contracts.Data;
+using RoadblockWithMongoDb.Contracts.Data.Models;
 using System;
 using System.Collections.Generic;
 
-namespace RoadblockWithMongoDb.Contracts.Entities
+namespace RoadblockWithMongoDb.Contracts.Data.Entities
 {
     public class Car : BaseEntity
     {
@@ -13,7 +14,7 @@ namespace RoadblockWithMongoDb.Contracts.Entities
 
         public string VehicleNumber { get; set; }
 
-        public ICollection<Person> Persons { get; set; }
+        public IEnumerable<Person> Persons { get; set; }
 
         public DateTime AddedOn { get; set; }
     }

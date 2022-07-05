@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RoadblockWithMongoDb.Contracts.Data.Entities;
 using RoadblockWithMongoDb.Contracts.Data.Repositories;
-using RoadblockWithMongoDb.Contracts.Entities;
 using RoadblockWithMongoDb.Contracts.Services;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace RoadblockWithMongoDb.API.Controllers
 {
@@ -11,11 +12,38 @@ namespace RoadblockWithMongoDb.API.Controllers
     public class HomeController
     {
         private readonly IRepository<Car> _carRepository;
-        private readonly IRepository<Person> _personRepository;
         public HomeController(IDataService ds)
         {
             _carRepository = ds.Cars;
-            _personRepository = ds.Persons;
+        }
+
+        [HttpPost]
+        [Route("add-car")]
+        public async Task AddCar([FromBody] Car car)
+        {
+            await _carRepository.AddAsync(car);
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<Car> GetAsync(string id)
+        {
+            return await _carRepository.GetSingleAsync(x => x.Id == id);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task DeleteAsync(string id)
+        {
+            await _carRepository.DeleteAsync(x => x.Id == id);
+        }
+
+        [HttpPut]
+        [Route("car/{id}")]
+        public async Task PutAsync([FromRoute] string id, [FromBody] Car model)
+        {
+            model.SetId(id);
+            await _carRepository.UpdateAsync(model);
         }
 
         [HttpGet]
@@ -23,13 +51,6 @@ namespace RoadblockWithMongoDb.API.Controllers
         public IEnumerable<Car> GetCars()
         {
             return _carRepository.GetAll();
-        }
-
-        [HttpGet]
-        [Route("persons")]
-        public IEnumerable<Person> GetPersons()
-        {
-            return _personRepository.GetAll();
         }
     }
 }
