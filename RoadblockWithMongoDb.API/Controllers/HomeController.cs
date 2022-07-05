@@ -25,14 +25,14 @@ namespace RoadblockWithMongoDb.API.Controllers
         }
 
         [HttpGet]
-        [Route("{id}")]
+        [Route("car/{id}")]
         public async Task<Car> GetAsync(string id)
         {
             return await _carRepository.GetSingleAsync(x => x.Id == id);
         }
 
         [HttpDelete]
-        [Route("{id}")]
+        [Route("car/{id}")]
         public async Task DeleteAsync(string id)
         {
             await _carRepository.DeleteAsync(x => x.Id == id);
