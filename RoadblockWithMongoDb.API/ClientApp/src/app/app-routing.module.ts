@@ -4,12 +4,8 @@ import { CarListComponent } from './presentation/components/car-components/car-l
 import { HomeComponent } from './presentation/components/home-component/home/home/home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }
-  { path: 'cars', component: CarListComponent },
-];
-
-const carRoutes: Routes = [
-
+  { path: '', component: HomeComponent },
+  { path: 'cars', component: CarListComponent }
 ];
 
 @NgModule({
