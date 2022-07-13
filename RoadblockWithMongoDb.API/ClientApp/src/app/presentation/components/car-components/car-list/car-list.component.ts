@@ -23,5 +23,4 @@ export class CarListComponent implements OnInit {
     let car = this.cars.find(item => item.id === id);
     return car?.Persons.length;
   }
-
 }

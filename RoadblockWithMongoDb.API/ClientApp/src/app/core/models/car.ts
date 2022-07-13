@@ -1,7 +1,7 @@
 export class Car {
     id: string;
     vehicleNumber: string;
-    Persons: Person[];
+    Persons: Person[]= [];
     addedOn: Date;
 }
 

@@ -1,5 +1,5 @@
-import { environment } from "src/environments/environment";
+import { Inject } from "@angular/core";
 
-export const baseUrl = environment.apiUrl + '/api';
+export const baseUrl = Inject('BASE_URL');
 
-export const carServiceUrl = baseUrl + '/cars/';
+export const carServiceUrl = 'api/Home/cars';
