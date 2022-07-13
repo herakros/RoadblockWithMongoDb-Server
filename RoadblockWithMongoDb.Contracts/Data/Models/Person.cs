@@ -8,7 +8,7 @@ namespace RoadblockWithMongoDb.Contracts.Data.Models
 
         public string Surname { get; set; }
 
-        public string Age { get; set; }
+        public int Age { get; set; }
 
         public string PhoneNumber { get; set; }
 
