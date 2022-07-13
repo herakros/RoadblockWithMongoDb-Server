@@ -1,3 +1,16 @@
-<p>
-  car-list works!
-</p>
+<table class="table table-bordered">
+  <thead class="thread-dark">
+    <tr>
+      <th>#</th>
+      <th>Vehicle Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of cars;">
+      <td>{{car.id}}</td>
+      <td>{{car.vehicleNumber}}</td>
+      <td>{{car.addedOn}}</td>
+    </tr>
+  </tbody>
+</table>
