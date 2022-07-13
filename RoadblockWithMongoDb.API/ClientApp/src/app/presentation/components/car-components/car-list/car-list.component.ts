@@ -18,9 +18,4 @@ export class CarListComponent implements OnInit {
       this.cars = data;
     })
   }
-
-  getPersonCount(id: string) : any {
-    let car = this.cars.find(item => item.id === id);
-    return car?.Persons.length;
-  }
 }
