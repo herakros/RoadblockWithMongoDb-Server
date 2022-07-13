@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Car } from 'src/app/core/models/car';
 
 @Component({
   selector: 'app-car-list',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarListComponent implements OnInit {
 
+  cars: Car[];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getPersonCount(id: string) : any {
+    let car = this.cars.find(item => item.id === id);
+    return car?.Persons.length;
   }
 
 }
