@@ -4,6 +4,9 @@
       <th>#</th>
       <th>Vehicle Number</th>
       <th>Date</th>
+      <th>Persons count</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -11,6 +14,15 @@
       <td>{{car.id}}</td>
       <td>{{car.vehicleNumber}}</td>
       <td>{{car.addedOn}}</td>
+      <td>{{car.persons.length}}</td>
+      <td><a>Edit</a></td>
+      <td><a>Remove</a></td>
     </tr>
   </tbody>
 </table>
+
+<div class="card-container">
+  <a class="card" rel="noopener" href="./car/add">
+    <span>Add Car</span>
+  </a>
+</div>
