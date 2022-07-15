@@ -15,14 +15,14 @@
       <td>{{car.vehicleNumber}}</td>
       <td>{{car.addedOn}}</td>
       <td>{{car.persons.length}}</td>
-      <td><a>Edit</a></td>
-      <td><a>Remove</a></td>
+      <td><a rel="noopener" [routerLink]="['/car/edit', car.id]">Edit</a></td>
+      <td><a rel="noopener" [routerLink]="['/car/delete', car.id]">Remove</a></td>
     </tr>
   </tbody>
 </table>
 
 <div class="card-container">
-  <a class="card" rel="noopener" href="./car/add">
+  <a class="card" rel="noopener" [routerLink]="['/car/add']">
     <span>Add Car</span>
   </a>
 </div>

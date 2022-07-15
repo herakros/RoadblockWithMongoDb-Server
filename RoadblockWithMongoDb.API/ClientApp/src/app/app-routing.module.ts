@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'cars', component: CarListComponent },
   { path: 'car/add', component: CarAddComponent},
   { path: 'car/edit/:id', component: CarEditComponent},
-  { path: 'car/delete/:id', component: CarDeleteComponent }
+  { path: 'car/delete/:id', component: CarDeleteComponent },
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
