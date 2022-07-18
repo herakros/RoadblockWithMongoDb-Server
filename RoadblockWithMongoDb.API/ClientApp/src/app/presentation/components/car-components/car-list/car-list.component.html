@@ -16,7 +16,7 @@
       <td>{{car.addedOn | date:'HH:mm dd.MM.yyyy'}}</td>
       <td>{{car.persons.length}}</td>
       <td><a rel="noopener" [routerLink]="['/car/edit', car.id]" class="btn btn-primary btn-sm">Edit</a></td>
-      <td><a rel="noopener" [routerLink]="['/car/delete', car.id]" class="btn btn-danger btn-sm">Remove</a></td>
+      <td><a rel="noopener" (click)="removeCar(car.id)" class="btn btn-danger btn-sm">Remove</a></td>
     </tr>
   </tbody>
 </table>
