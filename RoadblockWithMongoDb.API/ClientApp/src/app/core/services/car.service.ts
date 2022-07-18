@@ -17,6 +17,6 @@ export class CarService {
     }
 
     addCar(car: Car) : Observable<void> {
-        return this.http.post<void>(`${carServiceUrl}add-car`, car);
+        return this.http.post<void>(`${carServiceUrl}cars`, car);
     }
 }
