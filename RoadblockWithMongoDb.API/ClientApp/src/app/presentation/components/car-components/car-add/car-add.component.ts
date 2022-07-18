@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Car } from 'src/app/core/models/car';
+import { Car, Person } from 'src/app/core/models/car';
 import { CarService } from 'src/app/core/services/car.service';
 
 @Component({
@@ -11,7 +11,8 @@ import { CarService } from 'src/app/core/services/car.service';
 })
 export class CarAddComponent implements OnInit {
 
-  form: FormGroup;
+  formCar: FormGroup;
+  formPerson: FormGroup;
   car: Car;
 
   constructor(private service: CarService,
@@ -19,21 +20,30 @@ export class CarAddComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.form = new FormGroup({ cars: new FormArray([])});
-
-    this.form = this.formBuilder.group({
+    this.formCar = this.formBuilder.group({
       id: new FormControl({value: '', disabled: true}),
       vehicleNumber: new FormControl('', [Validators.required]),
       addedOn: new FormControl({value: '', disabled: true})
     });
+    this.formPerson = new FormGroup({ cars: new FormArray([])});
+  }
+
+  onAddNewPerson() {
+    const person = new FormGroup({
+      name: new FormControl(),
+      surname: new FormControl(),
+      age: new FormControl(),
+      phoneNumber: new FormControl(),
+      isDriver: new FormControl()
+    });
+    (<FormArray>this.formPerson.get('cars')).push(person);
   }
 
   add(){
-    this.car = <Car>this.form.value;
-    this.car.persons = [];
-
+    this.car = <Car>this.formCar.value;
+    this.car.persons = <Person[]>this.formPerson.value;
     this.service.addCar(this.car).subscribe(
-      (res) => {
+      () => {
         this.router.navigate(['/']);
       },
       (err) => {
@@ -42,4 +52,7 @@ export class CarAddComponent implements OnInit {
     );
   }
 
+  get formData(){
+    return this.formPerson.get('cars') as FormArray;
+  }
 }

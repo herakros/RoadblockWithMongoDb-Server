@@ -1,7 +1,24 @@
-<form [formGroup]="form">
+<form [formGroup]="formCar" class="form-group">
   <div class="form-group">
     <label for="vehicleNumber">Vehicle Number</label>
     <input type="text" class="form-control" formControlName="vehicleNumber"/>
   </div>
-  <button class="btn btn-primary" [disabled]="form.invalid" type="button" (click)="add()">Add</button>
+  <form [formGroup]="formPerson" class="form-group">
+    <div formArrayName="cars" class="form-group">
+      <div
+      *ngFor="let carFormGroup of formData.controls; let i = index" [formGroupName]="i">
+      <input type="text" formControlName="name" placeholder="person name"/>
+      &nbsp;
+      <input type="text" formControlName="surname" placeholder="person surname"/>
+      &nbsp;
+      <input type="number" formControlName="age" placeholder="person age"/>
+      &nbsp;
+      <input type="number" formControlName="phoneNumber" placeholder="person phone number"/>
+      &nbsp;
+      <input type="checkbox" checked="false" formControlName="isDriver" placeholder="person name"/>
+      </div>
+    </div>
+    <button class="btn btn-secondary" (click)="onAddNewPerson()">New Person</button>
+  </form>
+  <button class="btn btn-primary" (click)="add()">Add car</button>
 </form>
