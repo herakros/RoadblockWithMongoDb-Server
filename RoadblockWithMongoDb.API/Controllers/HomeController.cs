@@ -18,28 +18,28 @@ namespace RoadblockWithMongoDb.API.Controllers
         }
 
         [HttpPost]
-        [Route("add-car")]
+        [Route("cars")]
         public async Task AddCar([FromBody] Car car)
         {
             await _carRepository.AddAsync(car);
         }
 
         [HttpGet]
-        [Route("car/{id}")]
+        [Route("cars/{id}")]
         public async Task<Car> GetAsync([FromRoute] string id)
         {
             return await _carRepository.GetSingleAsync(x => x.Id == id);
         }
 
         [HttpDelete]
-        [Route("car/{id}")]
+        [Route("cars/{id}")]
         public async Task DeleteAsync([FromRoute]  string id)
         {
             await _carRepository.DeleteAsync(x => x.Id == id);
         }
 
         [HttpPut]
-        [Route("car/{id}")]
+        [Route("cars/{id}")]
         public async Task PutAsync([FromRoute] string id, [FromBody] Car model)
         {
             model.SetId(id);
