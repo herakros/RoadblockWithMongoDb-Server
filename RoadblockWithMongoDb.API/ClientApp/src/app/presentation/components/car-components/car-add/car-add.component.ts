@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Car } from 'src/app/core/models/car';
 import { CarService } from 'src/app/core/services/car.service';
@@ -19,6 +19,8 @@ export class CarAddComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+    this.form = new FormGroup({ cars: new FormArray([])});
+
     this.form = this.formBuilder.group({
       id: new FormControl({value: '', disabled: true}),
       vehicleNumber: new FormControl('', [Validators.required]),
