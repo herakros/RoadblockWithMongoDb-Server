@@ -33,8 +33,7 @@ export class CarAddComponent implements OnInit {
       name: new FormControl(),
       surname: new FormControl(),
       age: new FormControl(),
-      phoneNumber: new FormControl(),
-      isDriver: new FormControl()
+      phoneNumber: new FormControl()
     });
     (<FormArray>this.formPerson.get('cars')).push(person);
   }
