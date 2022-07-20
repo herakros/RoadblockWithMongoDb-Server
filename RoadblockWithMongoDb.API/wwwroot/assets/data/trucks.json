@@ -1,0 +1,26 @@
+[
+  {
+    "VehicleNumber": "BASF12312",
+    "AddedOn": "2022-07-20T21:01:36.123Z",
+    "Driver": {
+      "Name": "Adam",
+      "Surname": "Cash",
+      "Age": 33,
+      "PhoneNumber": "+777-777-77"
+    },
+    "TruckWeight": 1200,
+    "Model": "DAF"
+  },
+  {
+    "VehicleNumber": "ASDCXV123",
+    "AddedOn": "2022-07-20T21:01:36.123Z",
+    "Driver": {
+      "Name": "Ali",
+      "Surname": "Tayson",
+      "Age": 31,
+      "PhoneNumber": "+777-777-77"
+    },
+    "TruckWeight": 1500,
+    "Model": "Mercedes"
+  }
+]
