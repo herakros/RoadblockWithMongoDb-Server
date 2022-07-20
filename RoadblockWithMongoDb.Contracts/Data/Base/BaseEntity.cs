@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace RoadblockWithMongoDb.Contracts.Data
+namespace RoadblockWithMongoDb.Contracts.Data.Base
 {
     public abstract class BaseEntity
     {
@@ -9,7 +9,6 @@ namespace RoadblockWithMongoDb.Contracts.Data
         [BsonRepresentation(BsonType.ObjectId)]
         public virtual string Id { get; private set; }
 
-        public void SetId(string id) =>
-            Id = id;
+        public void SetId(string id) => Id = id;
     }
 }

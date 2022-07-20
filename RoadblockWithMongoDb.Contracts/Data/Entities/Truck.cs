@@ -1,11 +1,14 @@
 ﻿using RoadblockWithMongoDb.Contracts.Data.Base;
 using RoadblockWithMongoDb.Contracts.Data.Models;
-using System.Collections.Generic;
 
 namespace RoadblockWithMongoDb.Contracts.Data.Entities
 {
-    public class Car : BaseAuto
+    public class Truck : BaseAuto
     {
-        public IEnumerable<Person> Persons { get; set; }
+        public Person Driver { get; set; }
+
+        public double TruckWeight { get; set; }
+
+        public string Model { get; set; }
     }
 }
