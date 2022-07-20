@@ -1,0 +1,50 @@
+﻿[
+  {
+    "VehicleNumber": "AAB31213",
+    "AddedOn": "2022-07-20T14:24:04.973Z",
+    "Persons": [
+      {
+        "Name": "Eugene",
+        "Surname": "Smith",
+        "Age": 22,
+        "PhoneNumber": "+777-777-77"
+      }
+    ]
+  },
+  {
+    "VehicleNumber": "BBAS312",
+    "AddedOn": "2022-07-20T14:24:04.973Z",
+    "Persons": [
+      {
+        "Name": "Mike",
+        "Surname": "Dept",
+        "Age": 30,
+        "PhoneNumber": "+111-111-11"
+      }
+    ]
+  },
+  {
+    "VehicleNumber": "BB123AAS",
+    "AddedOn": "2022-07-20T14:24:04.973Z",
+    "Persons": [
+      {
+        "Name": "Joth",
+        "Surname": "Mat",
+        "Age": 20,
+        "PhoneNumber": "+111-111-11"
+      },
+      {
+        "Name": "Alex",
+        "Surname": "Badin",
+        "Age": 25,
+        "PhoneNumber": "+111-111-11"
+      },
+      {
+        "Name": "Jim",
+        "Surname": "Trump",
+        "Age": 19,
+        "PhoneNumber": "+111-111-11"
+      }
+    ]
+  }
+]
