@@ -1,6 +1,4 @@
-﻿using RoadblockWithMongoDb.Contracts.Data;
-
-namespace RoadblockWithMongoDb.Contracts.Data.Models
+﻿namespace RoadblockWithMongoDb.Contracts.Data.Models
 {
     public class Person
     {
@@ -11,7 +9,5 @@ namespace RoadblockWithMongoDb.Contracts.Data.Models
         public int Age { get; set; }
 
         public string PhoneNumber { get; set; }
-
-        public bool IsDriver { get; set; }
     }
 }

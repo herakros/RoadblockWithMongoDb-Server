@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RoadblockWithMongoDb.Contracts.Data.Entities;
-using RoadblockWithMongoDb.Contracts.Data.Repositories;
 using RoadblockWithMongoDb.Contracts.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,31 +10,31 @@ namespace RoadblockWithMongoDb.API.Controllers
     [ApiController]
     public class HomeController
     {
-        private readonly IRepository<Car> _carRepository;
-        public HomeController(IDataService ds)
+        private readonly ICarService _carService;
+        public HomeController(ICarService carService)
         {
-            _carRepository = ds.Cars;
+            _carService = carService;
         }
 
         [HttpPost]
         [Route("cars")]
         public async Task AddCar([FromBody] Car car)
         {
-            await _carRepository.AddAsync(car);
+            await _carService.AddCar(car);
         }
 
         [HttpGet]
         [Route("cars/{id}")]
         public async Task<Car> GetAsync([FromRoute] string id)
         {
-            return await _carRepository.GetSingleAsync(x => x.Id == id);
+            return await _carService.GetCar(id);
         }
 
         [HttpDelete]
         [Route("cars/{id}")]
         public async Task DeleteAsync([FromRoute]  string id)
         {
-            await _carRepository.DeleteAsync(x => x.Id == id);
+            await _carService.DeleteCar(id);
         }
 
         [HttpPut]
@@ -43,14 +42,14 @@ namespace RoadblockWithMongoDb.API.Controllers
         public async Task PutAsync([FromRoute] string id, [FromBody] Car model)
         {
             model.SetId(id);
-            await _carRepository.UpdateAsync(model);
+            await _carService.EditCar(model);
         }
 
         [HttpGet]
         [Route("cars")]
         public IEnumerable<Car> GetCars()
         {
-            return _carRepository.GetAll();
+            return _carService.GetCars();
         }
     }
 }

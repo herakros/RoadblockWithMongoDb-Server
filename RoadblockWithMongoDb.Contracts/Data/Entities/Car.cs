@@ -1,5 +1,4 @@
-﻿using RoadblockWithMongoDb.Contracts.Data;
-using RoadblockWithMongoDb.Contracts.Data.Models;
+﻿using RoadblockWithMongoDb.Contracts.Data.Models;
 using System;
 using System.Collections.Generic;
 

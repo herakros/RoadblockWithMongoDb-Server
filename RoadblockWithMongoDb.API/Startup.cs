@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using RoadblockWithMongoDb.Contracts.Config;
+using RoadblockWithMongoDb.Core;
 using RoadblockWithMongoDb.Infrastructure;
 
 namespace RoadblockWithMongoDb.API
@@ -25,19 +26,20 @@ namespace RoadblockWithMongoDb.API
             services.Configure<DatabaseSettings>(Configuration.GetSection("MongoConnection"));
             services.AddMongoContext();
             services.AddDataService();
+            services.AddCustomServices();
 
             services.AddControllersWithViews();
             services.AddCors();
 
-            services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "ClientApp/dist";
-            });
-
-            //services.AddSwaggerGen(c =>
+            //services.AddSpaStaticFiles(configuration =>
             //{
-            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "RoadblockWithMongoDb.API", Version = "v1" });
+            //    configuration.RootPath = "ClientApp/dist";
             //});
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RoadblockWithMongoDb.API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,8 +48,8 @@ namespace RoadblockWithMongoDb.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                //app.UseSwagger();
-                //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RoadblockWithMongoDb.API v1"));
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RoadblockWithMongoDb.API v1"));
             }
 
             app.UseHttpsRedirection();
@@ -61,15 +63,15 @@ namespace RoadblockWithMongoDb.API
                 endpoints.MapControllers();
             });
 
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "ClientApp";
+            //app.UseSpa(spa =>
+            //{
+            //    spa.Options.SourcePath = "ClientApp";
 
-                if (env.IsDevelopment())
-                {
-                    spa.UseAngularCliServer(npmScript: "start");
-                }
-            });
+            //    if (env.IsDevelopment())
+            //    {
+            //        spa.UseAngularCliServer(npmScript: "start");
+            //    }
+            //});
         }
     }
 }
