@@ -13,6 +13,14 @@ export class CarService {
     constructor(private http: HttpClient) { }
 
     getAll() : Observable<Car[]> {
-        return this.http.get<Car[]>(carServiceUrl);
+        return this.http.get<Car[]>(`${carServiceUrl}cars`);
+    }
+
+    addCar(car: Car) : Observable<void> {
+        return this.http.post<void>(`${carServiceUrl}cars`, car);
+    }
+
+    deleteCar(carId: string){
+        return this.http.delete(`${carServiceUrl}cars/${carId}`);
     }
 }

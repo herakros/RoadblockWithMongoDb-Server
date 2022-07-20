@@ -3,7 +3,6 @@ export interface Person {
     surname: string;
     age: number;
     phoneNumber: string;
-    isDriver: boolean;
 }
 export interface Car {
     vehicleNumber: string;

@@ -1,3 +1,22 @@
-<p>
-  car-add works!
-</p>
+<form [formGroup]="formCar" class="form-group">
+  <div class="form-group">
+    <label for="vehicleNumber">Vehicle Number</label>
+    <input type="text" class="form-control" formControlName="vehicleNumber"/>
+  </div>
+  <form [formGroup]="formPerson" class="form-group">
+    <div formArrayName="persons" class="form-group">
+      <div
+      *ngFor="let carFormGroup of formData.controls; let i = index" [formGroupName]="i">
+      <input type="text" formControlName="name" placeholder="person name"/>
+      &nbsp;
+      <input type="text" formControlName="surname" placeholder="person surname"/>
+      &nbsp;
+      <input type="number" formControlName="age" placeholder="person age"/>
+      &nbsp;
+      <input type="number" formControlName="phoneNumber" placeholder="person phone number"/>
+      </div>
+    </div>
+    <button class="btn btn-secondary" (click)="onAddNewPerson()">New Person</button>
+  </form>
+  <button class="btn btn-primary" (click)="add()">Add car</button>
+</form>

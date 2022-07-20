@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using RoadblockWithMongoDb.Contracts.Config;
+using RoadblockWithMongoDb.Core;
 using RoadblockWithMongoDb.Infrastructure;
 
 namespace RoadblockWithMongoDb.API
@@ -25,6 +26,7 @@ namespace RoadblockWithMongoDb.API
             services.Configure<DatabaseSettings>(Configuration.GetSection("MongoConnection"));
             services.AddMongoContext();
             services.AddDataService();
+            services.AddCustomServices();
 
             services.AddControllersWithViews();
             services.AddCors();
@@ -34,10 +36,10 @@ namespace RoadblockWithMongoDb.API
                 configuration.RootPath = "ClientApp/dist";
             });
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RoadblockWithMongoDb.API", Version = "v1" });
-            });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "RoadblockWithMongoDb.API", Version = "v1" });
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RoadblockWithMongoDb.Contracts.Data.Entities;
-using RoadblockWithMongoDb.Contracts.Data.Repositories;
 using RoadblockWithMongoDb.Contracts.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,48 +8,48 @@ namespace RoadblockWithMongoDb.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class HomeController
+    public class CarController
     {
-        private readonly IRepository<Car> _carRepository;
-        public HomeController(IDataService ds)
+        private readonly ICarService _carService;
+        public CarController(ICarService carService)
         {
-            _carRepository = ds.Cars;
+            _carService = carService;
         }
 
         [HttpPost]
-        [Route("add-car")]
+        [Route("cars")]
         public async Task AddCar([FromBody] Car car)
         {
-            await _carRepository.AddAsync(car);
+            await _carService.AddCar(car);
         }
 
         [HttpGet]
-        [Route("car/{id}")]
+        [Route("cars/{id}")]
         public async Task<Car> GetAsync([FromRoute] string id)
         {
-            return await _carRepository.GetSingleAsync(x => x.Id == id);
+            return await _carService.GetCar(id);
         }
 
         [HttpDelete]
-        [Route("car/{id}")]
+        [Route("cars/{id}")]
         public async Task DeleteAsync([FromRoute]  string id)
         {
-            await _carRepository.DeleteAsync(x => x.Id == id);
+            await _carService.DeleteCar(id);
         }
 
         [HttpPut]
-        [Route("car/{id}")]
+        [Route("cars/{id}")]
         public async Task PutAsync([FromRoute] string id, [FromBody] Car model)
         {
             model.SetId(id);
-            await _carRepository.UpdateAsync(model);
+            await _carService.EditCar(model);
         }
 
         [HttpGet]
         [Route("cars")]
         public IEnumerable<Car> GetCars()
         {
-            return _carRepository.GetAll();
+            return _carService.GetCars();
         }
     }
 }

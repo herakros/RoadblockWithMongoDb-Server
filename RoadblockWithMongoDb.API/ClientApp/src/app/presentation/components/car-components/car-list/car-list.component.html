@@ -13,16 +13,16 @@
     <tr *ngFor="let car of cars;">
       <td>{{car.id}}</td>
       <td>{{car.vehicleNumber}}</td>
-      <td>{{car.addedOn}}</td>
+      <td>{{car.addedOn | date:'HH:mm dd.MM.yyyy'}}</td>
       <td>{{car.persons.length}}</td>
-      <td><a>Edit</a></td>
-      <td><a>Remove</a></td>
+      <td><a rel="noopener" [routerLink]="['/car/edit', car.id]" class="btn btn-primary btn-sm">Edit</a></td>
+      <td><a rel="noopener" (click)="removeCar(car.id)" class="btn btn-danger btn-sm">Remove</a></td>
     </tr>
   </tbody>
 </table>
 
 <div class="card-container">
-  <a class="card" rel="noopener" href="./car/add">
+  <a class="btn btn-success btn-sm" rel="noopener" [routerLink]="['/car/add']">
     <span>Add Car</span>
   </a>
 </div>
