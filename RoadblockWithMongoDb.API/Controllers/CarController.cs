@@ -8,7 +8,7 @@ namespace RoadblockWithMongoDb.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CarController
+    public class CarController : Controller
     {
         private readonly ICarService _carService;
         public CarController(ICarService carService)

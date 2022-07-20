@@ -9,6 +9,7 @@ namespace RoadblockWithMongoDb.Core
         public static void AddCustomServices(this IServiceCollection services)
         {
             services.AddScoped<ICarService, CarService>();
+            services.AddScoped<ITruckService, TruckService>();
         }
     }
 }

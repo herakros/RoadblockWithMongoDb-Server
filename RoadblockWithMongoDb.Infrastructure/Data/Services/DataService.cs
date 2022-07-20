@@ -16,5 +16,7 @@ namespace RoadblockWithMongoDb.Infrastructure.Data.Services
         }
 
         public IRepository<Car> Cars => new BaseRepository<Car>(_dbContext.Database, MongoCollectionNames.Cars);
+
+        public IRepository<Truck> Trucks => new BaseRepository<Truck>(_dbContext.Database, MongoCollectionNames.Trucks);
     }
 }

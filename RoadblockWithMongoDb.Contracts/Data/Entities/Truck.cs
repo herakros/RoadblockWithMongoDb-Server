@@ -3,7 +3,7 @@ using RoadblockWithMongoDb.Contracts.Data.Models;
 
 namespace RoadblockWithMongoDb.Contracts.Data.Entities
 {
-    public class Truck : BaseAuto
+    public class Truck : BaseEntity
     {
         public Person Driver { get; set; }
 

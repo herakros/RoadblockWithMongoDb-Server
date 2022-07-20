@@ -1,5 +1,5 @@
 ﻿using MongoDB.Driver;
-using RoadblockWithMongoDb.Contracts.Data;
+using RoadblockWithMongoDb.Contracts.Data.Base;
 using RoadblockWithMongoDb.Contracts.Data.Repositories;
 using System;
 using System.Linq;

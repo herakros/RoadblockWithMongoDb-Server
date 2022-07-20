@@ -13,24 +13,24 @@ namespace RoadblockWithMongoDb.Core.Services
         {
             _carRepository = dataService.Cars;
         }
-        public Task AddCar(Car car)
+        public async Task AddCar(Car car)
         {
-            return _carRepository.AddAsync(car);
+            await _carRepository.AddAsync(car);
         }
 
-        public Task DeleteCar(string id)
+        public async Task DeleteCar(string id)
         {
-            return _carRepository.DeleteAsync(x => x.Id == id);
+            await _carRepository.DeleteAsync(x => x.Id == id);
         }
 
-        public Task EditCar(Car car)
+        public async Task EditCar(Car car)
         {
-            return _carRepository.UpdateAsync(car);
+            await _carRepository.UpdateAsync(car);
         }
 
-        public Task<Car> GetCar(string id)
+        public async Task<Car> GetCar(string id)
         {
-            return _carRepository.GetSingleAsync(x => x.Id == id);
+            return await _carRepository.GetSingleAsync(x => x.Id == id);
         }
 
         public IEnumerable<Car> GetCars()
