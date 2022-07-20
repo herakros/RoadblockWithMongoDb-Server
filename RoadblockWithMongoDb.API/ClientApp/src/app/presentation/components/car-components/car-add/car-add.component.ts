@@ -25,7 +25,7 @@ export class CarAddComponent implements OnInit {
       vehicleNumber: new FormControl('', [Validators.required]),
       addedOn: new FormControl({value: '', disabled: true})
     });
-    this.formPerson = new FormGroup({ cars: new FormArray([])});
+    this.formPerson = new FormGroup({ persons: new FormArray([])});
   }
 
   onAddNewPerson() {
@@ -35,12 +35,15 @@ export class CarAddComponent implements OnInit {
       age: new FormControl(),
       phoneNumber: new FormControl()
     });
-    (<FormArray>this.formPerson.get('cars')).push(person);
+    (<FormArray>this.formPerson.get('persons')).push(person);
   }
 
   add(){
     this.car = <Car>this.formCar.value;
     this.car.persons = <Person[]>this.formPerson.value;
+    this.car.id = '';
+    this.car.addedOn = new Date();
+    console.log(this.car);
     this.service.addCar(this.car).subscribe(
       () => {
         this.router.navigate(['/']);
@@ -52,6 +55,6 @@ export class CarAddComponent implements OnInit {
   }
 
   get formData(){
-    return this.formPerson.get('cars') as FormArray;
+    return this.formPerson.get('persons') as FormArray;
   }
 }

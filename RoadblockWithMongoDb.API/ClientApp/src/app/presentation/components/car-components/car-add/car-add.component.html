@@ -4,7 +4,7 @@
     <input type="text" class="form-control" formControlName="vehicleNumber"/>
   </div>
   <form [formGroup]="formPerson" class="form-group">
-    <div formArrayName="cars" class="form-group">
+    <div formArrayName="persons" class="form-group">
       <div
       *ngFor="let carFormGroup of formData.controls; let i = index" [formGroupName]="i">
       <input type="text" formControlName="name" placeholder="person name"/>
