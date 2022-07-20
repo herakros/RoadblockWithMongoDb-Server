@@ -6,5 +6,7 @@ namespace RoadblockWithMongoDb.Contracts.Services
     public interface IDataService
     {
         public IRepository<Car> Cars { get; }
+
+        public IRepository<Truck> Trucks { get; }
     }
 }

@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Core", "Application Core", "{C1FC61EB-746F-4ED9-9A4E-7A745460E897}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadblockWithMongoDb.API", "RoadblockWithMongoDb.API\RoadblockWithMongoDb.API.csproj", "{BEAFF711-D6F5-453B-B385-7A96E45F2FC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadblockWithMongoDb.API", "RoadblockWithMongoDb.API\RoadblockWithMongoDb.API.csproj", "{BEAFF711-D6F5-453B-B385-7A96E45F2FC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadblockWithMongoDb.Contracts", "RoadblockWithMongoDb.Contracts\RoadblockWithMongoDb.Contracts.csproj", "{E8E64653-5319-4574-9EAF-513A725EFEC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadblockWithMongoDb.Contracts", "RoadblockWithMongoDb.Contracts\RoadblockWithMongoDb.Contracts.csproj", "{E8E64653-5319-4574-9EAF-513A725EFEC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadblockWithMongoDb.Core", "RoadblockWithMongoDb.Core\RoadblockWithMongoDb.Core.csproj", "{D0882340-A77D-494B-8598-9ACA4B69101A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadblockWithMongoDb.Core", "RoadblockWithMongoDb.Core\RoadblockWithMongoDb.Core.csproj", "{D0882340-A77D-494B-8598-9ACA4B69101A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadblockWithMongoDb.Infrastructure", "RoadblockWithMongoDb.Infrastructure\RoadblockWithMongoDb.Infrastructure.csproj", "{DC71C7BB-FB7F-4CC9-8400-B32636E7A846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadblockWithMongoDb.Infrastructure", "RoadblockWithMongoDb.Infrastructure\RoadblockWithMongoDb.Infrastructure.csproj", "{DC71C7BB-FB7F-4CC9-8400-B32636E7A846}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
