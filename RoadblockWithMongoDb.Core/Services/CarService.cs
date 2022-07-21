@@ -1,5 +1,7 @@
-﻿using RoadblockWithMongoDb.Contracts.Data.Entities;
+﻿using AutoMapper;
+using RoadblockWithMongoDb.Contracts.Data.Entities;
 using RoadblockWithMongoDb.Contracts.Data.Repositories;
+using RoadblockWithMongoDb.Contracts.DTO.CarDTO;
 using RoadblockWithMongoDb.Contracts.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,12 +11,17 @@ namespace RoadblockWithMongoDb.Core.Services
     public class CarService : ICarService
     {
         private readonly IRepository<Car> _carRepository;
-        public CarService(IDataService dataService)
+        private readonly IMapper _mapper;
+        public CarService(IDataService dataService, IMapper mapper)
         {
             _carRepository = dataService.Cars;
+            _mapper = mapper;
         }
-        public async Task AddCar(Car car)
+        public async Task AddCar(CreateCarDTO carDTO)
         {
+            var car = new Car();
+            _mapper.Map(carDTO, car);
+
             await _carRepository.AddAsync(car);
         }
 

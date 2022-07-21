@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTO\CarDTO\" />
     <Folder Include="DTO\TruckDTO\" />
   </ItemGroup>
 

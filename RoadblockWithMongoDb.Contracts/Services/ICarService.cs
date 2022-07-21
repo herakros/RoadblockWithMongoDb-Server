@@ -1,4 +1,5 @@
 ﻿using RoadblockWithMongoDb.Contracts.Data.Entities;
+using RoadblockWithMongoDb.Contracts.DTO.CarDTO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -14,6 +15,6 @@ namespace RoadblockWithMongoDb.Contracts.Services
 
         Task DeleteCar(string id);
 
-        Task AddCar(Car car);
+        Task AddCar(CreateCarDTO car);
     }
 }

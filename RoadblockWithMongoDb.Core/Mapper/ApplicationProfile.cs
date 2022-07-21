@@ -1,9 +1,6 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RoadblockWithMongoDb.Contracts.Data.Entities;
+using RoadblockWithMongoDb.Contracts.DTO.CarDTO;
 
 namespace RoadblockWithMongoDb.Core.Mapper
 {
@@ -11,7 +8,9 @@ namespace RoadblockWithMongoDb.Core.Mapper
     {
         public ApplicationProfile()
         {
-
+            CreateMap<CreateCarDTO, Car>()
+                .ForMember(dest => dest.VehicleNumber, act => act.MapFrom(src => src.VehicleNumber))
+                .ForMember(dest => dest.Persons, act => act.MapFrom(src => src.Persons));
         }
     }
 }
