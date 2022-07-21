@@ -30,8 +30,11 @@ namespace RoadblockWithMongoDb.Core.Services
             await _carRepository.DeleteAsync(x => x.Id == id);
         }
 
-        public async Task EditCar(Car car)
+        public async Task EditCar(EditCarDTO carDTO, string id)
         {
+            var car = await _carRepository.GetSingleAsync(x => x.Id == id);
+            _mapper.Map(carDTO, car);
+
             await _carRepository.UpdateAsync(car);
         }
 

@@ -40,10 +40,9 @@ namespace RoadblockWithMongoDb.API.Controllers
 
         [HttpPut]
         [Route("cars/{id}")]
-        public async Task PutAsync([FromRoute] string id, [FromBody] Car model)
+        public async Task PutAsync([FromRoute] string id, [FromBody] EditCarDTO model)
         {
-            model.SetId(id);
-            await _carService.EditCar(model);
+            await _carService.EditCar(model, id);
         }
 
         [HttpGet]

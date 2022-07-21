@@ -11,6 +11,11 @@ namespace RoadblockWithMongoDb.Core.Mapper
             CreateMap<CreateCarDTO, Car>()
                 .ForMember(dest => dest.VehicleNumber, act => act.MapFrom(src => src.VehicleNumber))
                 .ForMember(dest => dest.Persons, act => act.MapFrom(src => src.Persons));
+
+            CreateMap<EditCarDTO, Car>()
+                .ForMember(dest => dest.VehicleNumber, act => act.MapFrom(src => src.VehicleNumber))
+                .ForMember(dest => dest.Persons, act => act.MapFrom(src => src.Persons))
+                .ForMember(dest => dest.AddedOn, act => act.MapFrom(src => src.AddedOn));
         }
     }
 }

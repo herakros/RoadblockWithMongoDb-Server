@@ -11,7 +11,7 @@ namespace RoadblockWithMongoDb.Contracts.Services
 
         Task<Car> GetCar(string id);
 
-        Task EditCar(Car car);
+        Task EditCar(EditCarDTO car, string id);
 
         Task DeleteCar(string id);
 
