@@ -1,4 +1,5 @@
 ﻿using RoadblockWithMongoDb.Contracts.Data.Entities;
+using RoadblockWithMongoDb.Contracts.DTO.TruckDTO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -10,10 +11,10 @@ namespace RoadblockWithMongoDb.Contracts.Services
 
         Task<Truck> GetTruck(string id);
 
-        Task EditTruck(Truck truck);
+        Task EditTruck(EditTruckDTO truckDTO, string id);
 
         Task DeleteTruck(string id);
 
-        Task AddTruck(Truck truck);
+        Task AddTruck(CreateTruckDTO truckDTO);
     }
 }

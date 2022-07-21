@@ -27,6 +27,7 @@ namespace RoadblockWithMongoDb.API
             services.AddMongoContext();
             services.AddDataService();
             services.AddCustomServices();
+            services.AddAutoMapper();
 
             services.AddControllersWithViews();
             services.AddCors();

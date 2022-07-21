@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RoadblockWithMongoDb.Contracts.Data.Entities;
+using RoadblockWithMongoDb.Contracts.DTO.CarDTO;
 using RoadblockWithMongoDb.Contracts.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -18,9 +19,9 @@ namespace RoadblockWithMongoDb.API.Controllers
 
         [HttpPost]
         [Route("cars")]
-        public async Task AddCar([FromBody] Car car)
+        public async Task AddCar([FromBody] CreateCarDTO carDTO)
         {
-            await _carService.AddCar(car);
+            await _carService.AddCar(carDTO);
         }
 
         [HttpGet]
@@ -39,10 +40,9 @@ namespace RoadblockWithMongoDb.API.Controllers
 
         [HttpPut]
         [Route("cars/{id}")]
-        public async Task PutAsync([FromRoute] string id, [FromBody] Car model)
+        public async Task PutAsync([FromRoute] string id, [FromBody] EditCarDTO carDTO)
         {
-            model.SetId(id);
-            await _carService.EditCar(model);
+            await _carService.EditCar(carDTO, id);
         }
 
         [HttpGet]
