@@ -8,4 +8,9 @@
     <PackageReference Include="MongoDB.Driver" Version="2.16.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTO\CarDTO\" />
+    <Folder Include="DTO\TruckDTO\" />
+  </ItemGroup>
+
 </Project>
