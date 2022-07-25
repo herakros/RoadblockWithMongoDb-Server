@@ -3,6 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using RoadblockWithMongoDb.Contracts.Services;
 using RoadblockWithMongoDb.Core.Mapper;
 using RoadblockWithMongoDb.Core.Services;
+using FluentValidation.AspNetCore;
+using RoadblockWithMongoDb.Core.Validators;
 
 namespace RoadblockWithMongoDb.Core
 {
@@ -23,6 +25,11 @@ namespace RoadblockWithMongoDb.Core
 
             IMapper mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);
+        }
+
+        public static void AddFluentValidator(this IServiceCollection services)
+        {
+            services.AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<CreateCarValidator>());
         }
     }
 }

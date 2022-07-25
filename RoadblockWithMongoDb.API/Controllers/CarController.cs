@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Mvc;
 using RoadblockWithMongoDb.Contracts.Data.Entities;
+using RoadblockWithMongoDb.Contracts.DTO;
 using RoadblockWithMongoDb.Contracts.DTO.CarDTO;
 using RoadblockWithMongoDb.Contracts.Services;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace RoadblockWithMongoDb.API.Controllers
@@ -12,6 +16,7 @@ namespace RoadblockWithMongoDb.API.Controllers
     public class CarController : Controller
     {
         private readonly ICarService _carService;
+
         public CarController(ICarService carService)
         {
             _carService = carService;
