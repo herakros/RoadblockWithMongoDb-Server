@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using RoadblockWithMongoDb.Contracts.Constants;
 using RoadblockWithMongoDb.Contracts.DTO.TruckDTO;
 
 namespace RoadblockWithMongoDb.Core.Validators
@@ -24,7 +25,7 @@ namespace RoadblockWithMongoDb.Core.Validators
             RuleFor(x => x.Driver).ChildRules(x => x.RuleFor(x => x.PhoneNumber)
                 .NotEmpty()
                 .NotNull()
-                .Matches(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$"));
+                .Matches(RegexTemplates.UrkainianPhoneNumber));
         }
     }
 }
