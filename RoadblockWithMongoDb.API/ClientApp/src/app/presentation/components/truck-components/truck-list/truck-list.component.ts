@@ -20,4 +20,15 @@ export class TruckListComponent implements OnInit {
     })
   }
 
+  removeTruck(id: string) {
+    this.service.removeTruck(id).subscribe(
+      () => {
+        location.reload();
+      },
+      err => {
+        console.log(err);
+      }
+    )
+  }
+
 }
