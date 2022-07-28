@@ -1,3 +1,30 @@
-<p>
-  truck-list works!
-</p>
+<table class="table table-bordered">
+  <thead class="thread-dark">
+    <tr>
+      <th>#</th>
+      <th>Model</th>
+      <th>Truck Weight</th>
+      <th>Date</th>
+      <th>Vehicle Number</th>
+      <th>Driver name</th>
+      <th>Driver surname</th>
+      <th>Driver age</th>
+      <th>Driver phone</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let truck of trucks;">
+      <td>{{truck.id}}</td>
+      <td>{{truck.model}}</td>
+      <td>{{truck.truckWeight}}</td>
+      <td>{{truck.addedOn | date:'HH:mm dd.MM.yyyy'}}</td>
+      <td>{{truck.vehicleNumber}}</td>
+      <td>{{truck.driver.name}}</td>
+      <td>{{truck.driver.surname}}</td>
+      <td>{{truck.driver.age}}</td>
+      <td>{{truck.driver.phoneNumber}}</td>
+    </tr>
+  </tbody>
+</table>

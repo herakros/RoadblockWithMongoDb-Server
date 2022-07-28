@@ -4,13 +4,15 @@ import { CarAddComponent } from './presentation/components/car-components/car-ad
 import { CarEditComponent } from './presentation/components/car-components/car-edit/car-edit.component';
 import { CarListComponent } from './presentation/components/car-components/car-list/car-list.component';
 import { HomeComponent } from './presentation/components/home-component/home/home.component';
+import { TruckListComponent } from './presentation/components/truck-components/truck-list/truck-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cars', component: CarListComponent },
   { path: 'car/add', component: CarAddComponent},
   { path: 'car/edit/:id', component: CarEditComponent},
-  { path: '**', component: HomeComponent }
+  { path: 'trucks', component: TruckListComponent },
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({

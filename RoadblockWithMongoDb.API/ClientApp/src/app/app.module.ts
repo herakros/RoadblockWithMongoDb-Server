@@ -6,10 +6,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarService } from './core/services/car.service';
+import { TruckService } from './core/services/truck.service';
 import { CarAddComponent } from './presentation/components/car-components/car-add/car-add.component';
 import { CarEditComponent } from './presentation/components/car-components/car-edit/car-edit.component';
 import { CarListComponent } from './presentation/components/car-components/car-list/car-list.component';
 import { HomeComponent } from './presentation/components/home-component/home/home.component';
+import { TruckListComponent } from './presentation/components/truck-components/truck-list/truck-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { HomeComponent } from './presentation/components/home-component/home/hom
     HomeComponent,
     CarListComponent,
     CarAddComponent,
-    CarEditComponent
+    CarEditComponent,
+    TruckListComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { HomeComponent } from './presentation/components/home-component/home/hom
     ReactiveFormsModule
   ],
   providers: [
-    CarService
+    CarService,
+    TruckService
   ],
   bootstrap: [AppComponent]
 })

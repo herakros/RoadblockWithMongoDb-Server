@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Car, Person } from 'src/app/core/models/car';
+import { Car } from 'src/app/core/models/car-models/car';
+import { Person } from 'src/app/core/models/Person';
 import { CarService } from 'src/app/core/services/car.service';
 
 @Component({
