@@ -13,4 +13,8 @@ export class TruckService {
     getAll() : Observable<Truck[]> {
         return this.http.get<Truck[]>(`${truckServiceUrl}trucks`);
     }
+
+    addTruck(truck: Truck) : Observable<void> {
+        return this.http.post<void>(`${truckServiceUrl}trucks`, truck)
+    }
 }

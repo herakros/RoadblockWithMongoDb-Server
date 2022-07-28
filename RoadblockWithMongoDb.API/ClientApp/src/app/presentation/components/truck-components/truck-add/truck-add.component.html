@@ -1,3 +1,32 @@
-<p>
-  truck-add works!
-</p>
+<form>
+  <form [formGroup]="formTruck" class="form-group">
+    <div class="form-group">
+      <label for="truckWeight">truck Weight</label>
+      <input type="number" class="form-control" formControlName="truckWeight"/>
+
+      <label for="model">Model</label>
+      <input type="text" class="form-control" formControlName="model"/>
+
+      <label for="vehicleNumber">Vehicle Number</label>
+      <input type="text" class="form-control" formControlName="vehicleNumber"/>
+    </div>
+  </form>
+  <label>Driver</label>
+  <form [formGroup]="formPerson" class="form-group">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" formControlName="name"/>
+
+      <label for="surname">Surname</label>
+      <input type="text" class="form-control" formControlName="surname"/>
+
+      <label for="age">Age</label>
+      <input type="number" class="form-control" formControlName="age"/>
+
+      <label for="phoneNumber">Phone</label>
+      <input type="text" class="form-control" formControlName="phoneNumber"/>
+    </div>
+  </form>
+  <button class="btn btn-primary" (click)="addTruck()">Add Truck</button>
+</form>
+

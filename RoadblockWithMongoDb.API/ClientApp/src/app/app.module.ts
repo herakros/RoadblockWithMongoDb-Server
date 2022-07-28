@@ -11,6 +11,8 @@ import { CarAddComponent } from './presentation/components/car-components/car-ad
 import { CarEditComponent } from './presentation/components/car-components/car-edit/car-edit.component';
 import { CarListComponent } from './presentation/components/car-components/car-list/car-list.component';
 import { HomeComponent } from './presentation/components/home-component/home/home.component';
+import { TruckAddComponent } from './presentation/components/truck-components/truck-add/truck-add.component';
+import { TruckEditComponent } from './presentation/components/truck-components/truck-edit/truck-edit.component';
 import { TruckListComponent } from './presentation/components/truck-components/truck-list/truck-list.component';
 
 @NgModule({
@@ -20,7 +22,9 @@ import { TruckListComponent } from './presentation/components/truck-components/t
     CarListComponent,
     CarAddComponent,
     CarEditComponent,
-    TruckListComponent
+    TruckListComponent,
+    TruckAddComponent,
+    TruckEditComponent
   ],
   imports: [
     BrowserModule,
