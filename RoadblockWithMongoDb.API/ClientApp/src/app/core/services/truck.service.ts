@@ -27,6 +27,6 @@ export class TruckService {
     }
 
     getSingleTruck(truckId: string) : Observable<Truck> {
-        return this.http.get<Truck>(`${truckServiceUrl}trucks${truckId}`);
+        return this.http.get<Truck>(`${truckServiceUrl}trucks/${truckId}`);
     }
 }
