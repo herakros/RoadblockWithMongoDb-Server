@@ -21,4 +21,12 @@ export class TruckService {
     removeTruck(truckId: string) {
         return this.http.delete(`${truckServiceUrl}trucks/${truckId}`);
     }
+
+    editTruck(truck: Truck, id: string) : Observable<void> {
+        return this.http.put<void>(`${truckServiceUrl}trucks/${id}`, truck);
+    }
+
+    getSingleTruck(truckId: string) : Observable<Truck> {
+        return this.http.get<Truck>(`${truckServiceUrl}trucks${truckId}`);
+    }
 }

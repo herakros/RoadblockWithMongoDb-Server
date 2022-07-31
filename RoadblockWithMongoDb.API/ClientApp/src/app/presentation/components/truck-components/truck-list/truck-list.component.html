@@ -10,7 +10,7 @@
       <th>Driver surname</th>
       <th>Driver age</th>
       <th>Driver phone</th>
-      <th></th>
+      <th>Edit</th>
       <th></th>
     </tr>
   </thead>
@@ -25,6 +25,7 @@
       <td>{{truck.driver.surname}}</td>
       <td>{{truck.driver.age}}</td>
       <td>{{truck.driver.phoneNumber}}</td>
+      <td><a class="btn btn-success btn-sm" rel="noopener" [routerLink]="['/truck/edit', truck.id]">Edit</a></td>
       <td><a rel="noopener" (click)="removeTruck(truck.id)" class="btn btn-danger btn-sm">Remove</a></td>
     </tr>
   </tbody>
