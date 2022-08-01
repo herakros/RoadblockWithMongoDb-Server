@@ -1,9 +1,5 @@
-export interface Person {
-    name: string;
-    surname: string;
-    age: number;
-    phoneNumber: string;
-}
+import { Person } from "../Person";
+
 export interface Car {
     vehicleNumber: string;
     persons: Person[];

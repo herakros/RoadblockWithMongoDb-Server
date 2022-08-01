@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Car } from 'src/app/core/models/car';
+import { Car } from 'src/app/core/models/car-models/car';
 import { CarService } from 'src/app/core/services/car.service';
 
 @Component({
@@ -17,7 +17,6 @@ export class CarListComponent implements OnInit {
   ngOnInit() {
     this.service.getAll().subscribe((data: Car[]) => {
       this.cars = data;
-      console.log(this.cars);
     })
   }
 

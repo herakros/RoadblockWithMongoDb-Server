@@ -2,13 +2,11 @@ import { Injectable } from '@angular/core';
 import { carServiceUrl } from 'src/app/configs/api-endpoints';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Car } from '../models/car';
+import { Car } from '../models/car-models/car';
 
 @Injectable()
 
 export class CarService {
-
-    private readonly carServiceUrl = carServiceUrl;
 
     constructor(private http: HttpClient) { }
 
